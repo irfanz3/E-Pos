@@ -14,6 +14,8 @@ public class Main extends Application {
         primaryStage.setTitle("EPOS");
         primaryStage.setScene(new Scene(root, 1080, 720));
         primaryStage.show();
+
+
     }
 
 
