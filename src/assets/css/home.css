@@ -1,0 +1,17 @@
+.button{
+    -fx-background-color: #303030;
+}
+.button:hover{
+    -fx-background-color: #454545;
+    -fx-text-fill: #FFFFFF;
+}
+.button:pressed{
+    -fx-background-color: #909090;
+    -fx-text-fill: #000000;
+}
+.button:visited{
+    -fx-text-fill: #959595;
+}
+.button:focused{
+    -fx-background-color: #303030;
+}
