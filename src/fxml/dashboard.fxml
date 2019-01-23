@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -22,7 +20,8 @@
             <children>
                 <Pane fx:id="coba2" prefHeight="726.0" prefWidth="1008.0">
                     <children>
-                  <ListView fx:id="productList" layoutY="131.0" prefHeight="463.0" prefWidth="912.0" />
+                  <ListView fx:id="productList" layoutY="131.0" prefHeight="502.0" prefWidth="912.0" />
+                  <Pane layoutY="549.0" prefHeight="85.0" prefWidth="912.0" style="-fx-background-color: #DE7300;" />
                         <JFXButton fx:id="btnHomeAdd" alignment="CENTER" graphicTextGap="15.0" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
                             <font>
                                 <Font size="23.0" />
@@ -73,49 +72,85 @@
         </VBox>
         <Pane fx:id="formProduk" prefHeight="730.0" prefWidth="1008.0" visible="false">
             <children>
-                <VBox layoutX="295.0" layoutY="76.0" prefHeight="579.0" prefWidth="419.0" style="-fx-background-color: #fffffff;">
-                    <children>
-                        <Pane prefHeight="599.0" prefWidth="419.0" style="-fx-background-color: #f8F8F8;">
-                            <children>
-                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="151.0" prefHeight="25.0" prefWidth="303.0" text="Tanggal" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
-                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="240.0" prefHeight="25.0" prefWidth="288.0" text="Model" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
-                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="324.0" prefHeight="25.0" prefWidth="288.0" text="Jumlah" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
-                                <JFXButton fx:id="btnSaveFormProduct" contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </JFXButton>
-                                <JFXButton fx:id="btnCloseFormProduct" contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="15.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </JFXButton>
-                                <JFXDatePicker fx:id="productDate" layoutX="58.0" layoutY="176.0" prefHeight="28.0" prefWidth="303.0" />
-                                <JFXComboBox fx:id="productModel" layoutX="58.0" layoutY="265.0" prefHeight="25.0" prefWidth="303.0" />
-                                <JFXTextField fx:id="productQty" layoutX="58.0" layoutY="349.0" prefHeight="25.0" prefWidth="303.0" />
-                            </children>
-                        </Pane>
-                    </children>
-                </VBox>
+            <VBox opacity="0.7" prefHeight="720.0" prefWidth="1004.0" style="-fx-background-color: #000;" />
+            <Pane layoutX="299.0" layoutY="243.0" prefHeight="355.0" prefWidth="449.0" style="-fx-background-color: #f8F8F8;">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="64.0" layoutY="54.0" prefHeight="25.0" prefWidth="288.0" text="Nama Model" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnSaveFormProduct" contentDisplay="CENTER" layoutX="277.0" layoutY="286.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCloseFormProduct" contentDisplay="CENTER" layoutX="159.0" layoutY="286.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER" textFill="#2980b9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXTextField fx:id="productModel" layoutX="64.0" layoutY="79.0" prefHeight="26.0" prefWidth="322.0" />
+                  <Label contentDisplay="CENTER" layoutX="122.0" layoutY="14.0" prefHeight="29.0" prefWidth="206.0" style="-fx-font-weight: bold;" text="Tambah Model" textAlignment="CENTER" textFill="#2980b9">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" layoutX="64.0" layoutY="132.0" prefHeight="25.0" prefWidth="288.0" text="Stok" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="productQty" layoutX="64.0" layoutY="157.0" prefHeight="26.0" prefWidth="322.0" />
+                  <Label contentDisplay="CENTER" layoutX="64.0" layoutY="208.0" prefHeight="25.0" prefWidth="288.0" text="Satuan" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="unit" layoutX="64.0" layoutY="233.0" prefHeight="26.0" prefWidth="322.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </Pane>
             </children>
         </Pane>
+      <Pane fx:id="formAddQty" prefHeight="730.0" prefWidth="1008.0" visible="false">
+         <children>
+            <VBox opacity="0.7" prefHeight="720.0" prefWidth="1004.0" style="-fx-background-color: #000;" />
+            <Pane layoutX="343.0" layoutY="265.0" prefHeight="200.0" prefWidth="322.0" style="-fx-background-color: #f8f8f8;">
+               <children>
+                  <Label layoutX="72.0" layoutY="14.0" prefHeight="29.0" prefWidth="178.0" style="-fx-font-weight: bold;" text="Tambah Stok" textFill="#2980b9">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="addStockField" layoutX="54.0" layoutY="74.0" prefHeight="26.0" prefWidth="223.0" />
+                  <JFXButton fx:id="btnSaveFormStock" contentDisplay="CENTER" layoutX="170.0" layoutY="135.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCloseFormStock" contentDisplay="CENTER" layoutX="52.0" layoutY="135.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER" textFill="#2980b9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
     </children>
 </AnchorPane>

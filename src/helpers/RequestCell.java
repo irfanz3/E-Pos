@@ -1,6 +1,7 @@
 package helpers;
 
 import com.jfoenix.controls.JFXButton;
+import controller.RequestController;
 import entity.Product;
 import entity.Request;
 import javafx.fxml.FXML;

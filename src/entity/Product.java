@@ -36,4 +36,8 @@ public class Product {
     public Date getDate() {
         return created_at;
     }
+
+    public void setStock(int s) {
+        this.stock = s;
+    }
 }

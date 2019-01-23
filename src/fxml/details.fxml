@@ -29,7 +29,7 @@
                                     <Font size="32.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="348.0" layoutY="10.0" prefHeight="40.0" prefWidth="523.0" text="LoremIpsum/XIX/214">
+                              <Label layoutX="348.0" layoutY="10.0" prefHeight="40.0" prefWidth="523.0" text="SURAT/XI/121/31">
                                  <font>
                                     <Font size="32.0" />
                                  </font>
@@ -73,7 +73,7 @@
                                     <Font size="32.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="40.0" prefWidth="523.0" text="30 Januari 2019">
+                              <Label prefHeight="40.0" prefWidth="523.0" text="23 Januari 2019">
                                  <font>
                                     <Font size="32.0" />
                                  </font>

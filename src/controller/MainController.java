@@ -1,5 +1,8 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController implements Initializable, EventHandler<ActionEvent> {
 
     private static final String DASHBOARD_FXML = "dashboard.fxml";
     private static final String REQUEST_FXML = "request.fxml";
@@ -20,30 +23,60 @@ public class MainController implements Initializable {
     @FXML
     private Pane container;
 
+    @FXML
+    private JFXButton btnDashboard;
+
+    @FXML
+    private JFXButton btnRequest;
+
+    @FXML
+    private JFXButton btnDelivery;
+
+    @FXML
+    private RequestController requestController;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setDetailsFxml();
+        setDashboardFxml();
+
+        btnDashboard.setOnAction(this);
+        btnRequest.setOnAction(this);
+        btnDelivery.setOnAction(this);
     }
 
     private void setDashboardFxml() {
-        setContainer(DASHBOARD_FXML);
+        FXMLLoader loader = setContainer(DASHBOARD_FXML);
+        loader.setController(new HomeController());
     }
 
     private void setRequestFxml() {
-        setContainer(REQUEST_FXML);
+        FXMLLoader loader = setContainer(REQUEST_FXML);
+        loader.setController(new RequestController());
     }
 
-    private void setDetailsFxml() {
-        setContainer(DETAILS_FXML);
+    public void setDetailsFxml() {
+        FXMLLoader loader = setContainer(DETAILS_FXML);
     }
 
-    private void setContainer(String filename) {
+    private FXMLLoader setContainer(String filename) {
         try {
-            Node node = FXMLLoader.load(getClass().getResource("../fxml/".concat(filename)));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/".concat(filename)));
+            Node node = loader.load();
+            container.getChildren().clear();
             container.getChildren().setAll(node);
+
+            return loader;
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return null;
     }
 
+    @Override
+    public void handle(ActionEvent e) {
+        if (e.getSource().equals(btnDashboard)) setDashboardFxml();
+        if (e.getSource().equals(btnRequest)) setRequestFxml();
+        if (e.getSource().equals(btnDelivery)) setDetailsFxml();
+    }
 }

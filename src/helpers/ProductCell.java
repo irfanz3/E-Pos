@@ -1,7 +1,10 @@
 package helpers;
 
 import com.jfoenix.controls.JFXButton;
+import controller.HomeController;
 import entity.Product;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,7 +35,13 @@ public class ProductCell implements Initializable{
     @FXML
     private HBox productCellContainer;
 
-    public ProductCell() {
+    private HomeController controller;
+
+    private int cellPosition = 0;
+
+    public ProductCell(HomeController parent, int position) {
+        controller = parent;
+        cellPosition = position;
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/product_cell.fxml"));
@@ -47,6 +56,11 @@ public class ProductCell implements Initializable{
         name.setText(product.getName());
         total.setText(product.getStock() + " " + product.getUnit());
         date.setText(dateFormat(product.getDate()));
+        action.setOnAction(actionEvent -> {
+            if (actionEvent.getSource().equals(action)) {
+                controller.openAddQty(cellPosition);
+            }
+        });
     }
 
     private String dateFormat(Date date) {

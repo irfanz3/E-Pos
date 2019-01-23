@@ -51,7 +51,7 @@ public class DetailsController implements Initializable, EventHandler<ActionEven
         detailsRequests.add(new DetailsRequest("Box Surat", 1000, "box", 100, 100));
         detailsRequests.add(new DetailsRequest("Box Buku", 800, "box", 100, 100));
 
-        for (int i = 0; i < 15; i++) detailsRequests.add(new DetailsRequest("Bar Code " + i, 800 + i, "box", 100 + i, 100 - i));
+//        for (int i = 0; i < 15; i++) detailsRequests.add(new DetailsRequest("Bar Code " + i, 800 + i, "box", 100 + i, 100 - i));
 
         ObservableList<DetailsRequest> observableList = FXCollections.observableArrayList(detailsRequests);
         productList.setItems(observableList);
