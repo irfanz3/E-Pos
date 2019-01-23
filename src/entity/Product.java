@@ -1,44 +1,39 @@
 package entity;
 
-import helpers.DBConnection;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Date;
 
 public class Product {
 
     private int id;
     private int stock;
-    private String code;
     private String name;
     private String unit;
     private Date created_at;
 
-    private Connection connection;
-
-    public Product() throws SQLException {
-
-        this.connection = DBConnection.getConnection();
-
+    public Product(String productName, int productStock, String productUnit) {
+        name = productName;
+        stock = productStock;
+        unit = productUnit;
+        created_at = new Date();
     }
 
-    public void getAll() {
-        PreparedStatement statement;
-
-        try {
-
-            statement = this.connection.prepareStatement("SELECT * FROM products");
-            statement.executeQuery();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-
-        }
+    public int getId() {
+        return id;
     }
 
+    public int getStock() {
+        return stock;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getUnit() {
+        return unit;
+    }
+
+    public Date getDate() {
+        return created_at;
+    }
 }

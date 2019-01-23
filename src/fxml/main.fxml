@@ -18,30 +18,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DE7300;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DE7300;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <VBox prefHeight="720.0" prefWidth="282.0" style="-fx-background-color: #303030;">
          <children>
             <Pane prefHeight="310.0" prefWidth="282.0">
                <children>
                   <Label alignment="CENTER" prefHeight="281.0" prefWidth="282.0" text="Label" />
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="168.0" fitWidth="255.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/1280px-Pos-Indonesia.svg.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                </children>
             </Pane>
             <Pane prefHeight="47.0" prefWidth="282.0" />
-            <JFXButton alignment="CENTER" prefHeight="50.0" prefWidth="283.0" text="HALAMAN UTAMA" textAlignment="CENTER" textFill="#959595">
+            <JFXButton fx:id="btnDashboard" alignment="CENTER" onAction="#handleAction" prefHeight="50.0" prefWidth="283.0" text="HALAMAN UTAMA" textAlignment="CENTER" textFill="#959595">
                <font>
                   <Font size="23.0" />
                </font>
             </JFXButton>
             <Pane prefHeight="53.0" prefWidth="282.0" />
-            <JFXButton alignment="CENTER" prefHeight="50.0" prefWidth="283.0" text="PERMINTAAN UPT" textAlignment="CENTER" textFill="#959595">
+            <JFXButton fx:id="btnRequest" alignment="CENTER" onAction="#handleAction" prefHeight="50.0" prefWidth="283.0" text="PERMINTAAN UPT" textAlignment="CENTER" textFill="#959595">
                <font>
                   <Font size="23.0" />
                </font>
             </JFXButton>
             <Pane prefHeight="53.0" prefWidth="282.0" />
-            <JFXButton alignment="CENTER" prefHeight="50.0" prefWidth="283.0" text="PENGIRIMAN UPT" textAlignment="CENTER" textFill="#959595">
+            <JFXButton fx:id="btnDelivery" alignment="CENTER" onAction="#handleAction" prefHeight="50.0" prefWidth="283.0" text="PENGIRIMAN UPT" textAlignment="CENTER" textFill="#959595">
                <font>
                   <Font size="23.0" />
                </font>
@@ -62,15 +69,11 @@
             <Pane prefHeight="31.0" prefWidth="282.0" />
          </children>
       </VBox>
-      <ImageView fitHeight="168.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="537.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="1010.0" AnchorPane.topAnchor="20.0">
-         <image>
-            <Image url="@../assets/1280px-Pos-Indonesia.svg.png" />
-         </image></ImageView>
-      <VBox fx:id="halamanUtama" layoutX="279.0" prefHeight="730.0" prefWidth="1008.0" visible="false">
+      <VBox fx:id="halamanUtama" layoutX="279.0" prefHeight="730.0" prefWidth="1008.0">
          <children>
             <HBox prefHeight="42.0" prefWidth="1000.0">
                <children>
-                  <JFXButton alignment="CENTER" graphicTextGap="15.0" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
+                  <JFXButton fx:id="btnHomeAdd" alignment="CENTER" graphicTextGap="15.0" onAction="#handleAction" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -89,7 +92,7 @@
             </HBox>
             <Pane fx:id="coba2" prefHeight="420.0" prefWidth="993.0">
                <children>
-                  <JFXTreeTableView layoutX="20.0" prefHeight="400.0" prefWidth="963.0" />
+                  <JFXTreeTableView fx:id="homeTableView" layoutX="20.0" prefHeight="400.0" prefWidth="963.0" />
                </children></Pane>
          </children>
       </VBox>
@@ -97,7 +100,7 @@
          <children>
             <HBox prefHeight="42.0" prefWidth="1000.0">
                <children>
-                  <JFXButton alignment="CENTER" graphicTextGap="15.0" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
+                  <JFXButton fx:id="btnAddPermintaan" alignment="CENTER" graphicTextGap="15.0" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -121,7 +124,7 @@
             </Pane>
          </children>
       </VBox>
-      <VBox fx:id="detailRequest" layoutX="282.0" prefHeight="730.0" prefWidth="1001.0">
+      <VBox fx:id="detailRequest" layoutX="282.0" prefHeight="730.0" prefWidth="1001.0" visible="false">
          <children>
             <VBox prefHeight="721.0" prefWidth="998.0">
                <children>
@@ -150,12 +153,12 @@
                   </Pane>
                   <Pane prefHeight="421.0" prefWidth="1001.0">
                      <children>
-                        <JFXTreeTableView prefHeight="411.0" prefWidth="1001.0" />
+                        <JFXTreeTableView fx:id="detailsTreeTable" prefHeight="411.0" prefWidth="1001.0" />
                      </children>
                   </Pane>
                   <Pane prefHeight="41.0" prefWidth="1001.0">
                      <children>
-                        <JFXButton contentDisplay="CENTER" layoutX="846.0" layoutY="2.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnDetailsSave" contentDisplay="CENTER" layoutX="846.0" layoutY="2.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -163,7 +166,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="731.0" layoutY="2.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
+                        <JFXButton fx:id="btnDetailsCancel" contentDisplay="CENTER" layoutX="731.0" layoutY="2.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -177,7 +180,7 @@
             </VBox>
          </children>
       </VBox>
-      <VBox fx:id="filter" layoutX="274.0" layoutY="-6.0" opacity="0.3" prefHeight="737.0" prefWidth="1008.0" style="-fx-background-color: #000;" />
+      <VBox fx:id="filter" layoutX="-5.0" layoutY="-6.0" opacity="0.3" prefHeight="737.0" prefWidth="1292.0" style="-fx-background-color: #000;" visible="false" />
       <Pane fx:id="formProduk" prefHeight="730.0" prefWidth="1280.0" visible="false">
          <children>
             <VBox layoutX="555.0" layoutY="88.0" prefHeight="579.0" prefWidth="419.0" style="-fx-background-color: #fffffff;">
@@ -199,7 +202,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXButton contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnSaveFormProduct" contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" onAction="#handleAction" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -207,7 +210,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
+                        <JFXButton fx:id="btnCloseFormProduct" contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" onAction="#handleAction" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -215,9 +218,9 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXDatePicker layoutX="58.0" layoutY="176.0" prefHeight="28.0" prefWidth="303.0" />
-                        <JFXComboBox layoutX="58.0" layoutY="265.0" prefHeight="25.0" prefWidth="303.0" />
-                        <JFXTextField layoutX="58.0" layoutY="349.0" prefHeight="25.0" prefWidth="303.0" />
+                        <JFXDatePicker fx:id="productDate" layoutX="58.0" layoutY="176.0" prefHeight="28.0" prefWidth="303.0" />
+                        <JFXComboBox fx:id="productModel" layoutX="58.0" layoutY="265.0" prefHeight="25.0" prefWidth="303.0" />
+                        <JFXTextField fx:id="productQty" layoutX="58.0" layoutY="349.0" prefHeight="25.0" prefWidth="303.0" />
                      </children>
                   </Pane>
                </children>
@@ -240,7 +243,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXButton contentDisplay="CENTER" layoutX="191.0" layoutY="161.0" prefHeight="37.0" prefWidth="109.0" text="SIMPAN" textAlignment="CENTER" textFill="#2980b9">
+                        <JFXButton fx:id="btnApproveSave" contentDisplay="CENTER" layoutX="191.0" layoutY="161.0" prefHeight="37.0" prefWidth="109.0" text="SIMPAN" textAlignment="CENTER" textFill="#2980b9">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -248,7 +251,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="96.0" layoutY="161.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8;" text="BATAL" textAlignment="CENTER" textFill="#2980b9">
+                        <JFXButton fx:id="btnApproveCancel" contentDisplay="CENTER" layoutX="96.0" layoutY="161.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8;" text="BATAL" textAlignment="CENTER" textFill="#2980b9">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -256,8 +259,8 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXTextField layoutX="23.0" layoutY="106.0" prefHeight="25.0" prefWidth="127.0" />
-                        <JFXToggleButton layoutX="125.0" layoutY="14.0" text=" " />
+                        <JFXTextField fx:id="approveQty" layoutX="23.0" layoutY="106.0" prefHeight="25.0" prefWidth="127.0" />
+                        <JFXToggleButton fx:id="approveToggle" layoutX="125.0" layoutY="14.0" text=" " />
                      </children>
                   </Pane>
                </children>
@@ -285,10 +288,10 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXTextField layoutX="237.0" layoutY="273.0" prefHeight="25.0" prefWidth="87.0" />
-                        <JFXComboBox layoutX="58.0" layoutY="273.0" prefHeight="25.0" prefWidth="156.0" />
-                        <JFXDatePicker layoutX="58.0" layoutY="57.0" prefHeight="28.0" prefWidth="303.0" />
-                        <JFXButton contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                        <JFXTextField fx:id="permintaanQty" layoutX="237.0" layoutY="273.0" prefHeight="25.0" prefWidth="87.0" />
+                        <JFXComboBox fx:id="permintaanModel" layoutX="58.0" layoutY="273.0" prefHeight="25.0" prefWidth="156.0" />
+                        <JFXDatePicker fx:id="permintaanDate" layoutX="58.0" layoutY="57.0" prefHeight="28.0" prefWidth="303.0" />
+                        <JFXButton fx:id="btnPermintaanSave" contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -296,7 +299,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
+                        <JFXButton fx:id="btnPermintaanCancel" contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -309,20 +312,20 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXTextField layoutX="58.0" layoutY="136.0" prefHeight="25.0" prefWidth="303.0" />
+                        <JFXTextField fx:id="permintaanLetterNumber" layoutX="58.0" layoutY="136.0" prefHeight="25.0" prefWidth="303.0" />
                         <Label contentDisplay="CENTER" layoutX="58.0" layoutY="179.0" prefHeight="25.0" prefWidth="288.0" text="Kantor" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <JFXComboBox layoutX="58.0" layoutY="204.0" prefHeight="25.0" prefWidth="303.0" />
+                        <JFXComboBox fx:id="permintaanOffice" layoutX="58.0" layoutY="204.0" prefHeight="25.0" prefWidth="303.0" />
                         <Pane prefHeight="200.0" prefWidth="200.0" />
                         <VBox layoutX="56.0" layoutY="312.0" prefHeight="200.0" prefWidth="303.0">
                            <children>
-                              <JFXChipView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="419.0" />
+                              <JFXChipView fx:id="permintaanModelContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="419.0" />
                            </children>
                         </VBox>
-                        <JFXButton layoutX="338.0" layoutY="257.0" prefHeight="28.0" prefWidth="35.0" style="-fx-background-color: #dddddd;" text="+">
+                        <JFXButton fx:id="addProduct" layoutX="338.0" layoutY="257.0" prefHeight="28.0" prefWidth="35.0" style="-fx-background-color: #dddddd;" text="+">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1004.0" style="-fx-background-color: #DE7300;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <children>
+        <VBox fx:id="halamanUtama" prefHeight="730.0" prefWidth="1008.0">
+            <children>
+                <Pane fx:id="coba2" prefHeight="726.0" prefWidth="1008.0">
+                    <children>
+                  <ListView fx:id="productList" layoutY="131.0" prefHeight="463.0" prefWidth="912.0" />
+                        <JFXButton fx:id="btnHomeAdd" alignment="CENTER" graphicTextGap="15.0" style="-fx-background-color: #303030;" text="TAMBAH" textAlignment="CENTER" textFill="#959595">
+                            <font>
+                                <Font size="23.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/round-add-button.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                  <HBox layoutY="76.0" prefHeight="55.0" prefWidth="912.0" style="-fx-background-color: #303030;">
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="293.0" text="Model" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="20.0" prefHeight="29.0" prefWidth="195.0" text="Stok" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="313.0" layoutY="20.0" prefHeight="29.0" prefWidth="195.0" text="Tanggal" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="508.0" layoutY="20.0" prefHeight="29.0" prefWidth="195.0" text="Opsi" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                    </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="48.0" left="48.0" right="48.0" top="48.0" />
+               </VBox.margin></Pane>
+            </children>
+        </VBox>
+        <Pane fx:id="formProduk" prefHeight="730.0" prefWidth="1008.0" visible="false">
+            <children>
+                <VBox layoutX="295.0" layoutY="76.0" prefHeight="579.0" prefWidth="419.0" style="-fx-background-color: #fffffff;">
+                    <children>
+                        <Pane prefHeight="599.0" prefWidth="419.0" style="-fx-background-color: #f8F8F8;">
+                            <children>
+                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="151.0" prefHeight="25.0" prefWidth="303.0" text="Tanggal" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="240.0" prefHeight="25.0" prefWidth="288.0" text="Model" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="58.0" layoutY="324.0" prefHeight="25.0" prefWidth="288.0" text="Jumlah" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="btnSaveFormProduct" contentDisplay="CENTER" layoutX="278.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #2980B9;" text="SIMPAN" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </JFXButton>
+                                <JFXButton fx:id="btnCloseFormProduct" contentDisplay="CENTER" layoutX="160.0" layoutY="519.0" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #2980B9; -fx-border-radius: 2;" text="BATAL" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </JFXButton>
+                                <JFXDatePicker fx:id="productDate" layoutX="58.0" layoutY="176.0" prefHeight="28.0" prefWidth="303.0" />
+                                <JFXComboBox fx:id="productModel" layoutX="58.0" layoutY="265.0" prefHeight="25.0" prefWidth="303.0" />
+                                <JFXTextField fx:id="productQty" layoutX="58.0" layoutY="349.0" prefHeight="25.0" prefWidth="303.0" />
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

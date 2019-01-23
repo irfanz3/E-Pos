@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1004.0" style="-fx-background-color: #DE7300;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailsController">
+    <children>
+        <VBox fx:id="halamanUtama" prefHeight="730.0" prefWidth="1008.0">
+            <children>
+                <Pane fx:id="coba2" prefHeight="726.0" prefWidth="1008.0">
+                    <children>
+                  <VBox layoutY="-1.0" prefHeight="203.0" prefWidth="912.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <HBox prefHeight="57.0" prefWidth="912.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="338.0" text="Nomor Surat">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="36.0" text=":">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="348.0" layoutY="10.0" prefHeight="40.0" prefWidth="523.0" text="LoremIpsum/XIX/214">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="57.0" prefWidth="912.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="338.0" text="Kantor">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="36.0" text=":">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="348.0" layoutY="10.0" prefHeight="40.0" prefWidth="523.0" text="KCP Warung Lobak">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="70.0" prefHeight="57.0" prefWidth="912.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="338.0" text="Tanggal">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="36.0" text=":">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="523.0" text="30 Januari 2019">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                        <ListView fx:id="productList" layoutY="299.0" prefHeight="336.0" prefWidth="912.0" />
+                        <HBox layoutY="244.0" prefHeight="55.0" prefWidth="912.0" style="-fx-background-color: #303030;">
+                            <children>
+                                <Label prefHeight="29.0" prefWidth="352.0" text="Model" textFill="WHITE">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="313.0" layoutY="20.0" prefHeight="29.0" prefWidth="146.0" text="Diminta" textFill="WHITE">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="29.0" prefWidth="146.0" text="Disetuijui" textFill="WHITE">
+                                   <font>
+                                      <Font size="23.0" />
+                                   </font>
+                                </Label>
+                                <Label layoutX="508.0" layoutY="20.0" prefHeight="29.0" prefWidth="221.0" text="Opsi" textFill="WHITE">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="48.0" left="48.0" right="48.0" top="48.0" />
+                    </VBox.margin></Pane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

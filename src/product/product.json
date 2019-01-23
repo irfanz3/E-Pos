@@ -1,0 +1,30 @@
+ [
+    {
+      "name": "Resi Tunggal",
+      "unit": "dus"
+    },
+    {
+      "name": "Seal Plastik",
+      "unit": "pcs"
+    },
+    {
+      "name": "Bar Code ePOS",
+      "unit": "roll"
+    },
+    {
+      "name": "Map Dinas",
+      "unit": "pcs"
+    },
+    {
+      "name": "Amplop Dinas Kecil",
+      "unit": "pcs"
+    },
+    {
+      "name": "Amplop Dinas Sedang",
+      "unit": "pcs"
+    },
+    {
+      "name": "Amplop Dinas Besar",
+      "unit": "pcs"
+    }
+ ]

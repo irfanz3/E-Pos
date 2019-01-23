@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="detailsCellContainer" layoutY="244.0" prefHeight="55.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="model" prefHeight="29.0" prefWidth="352.0" text="Model">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="request" layoutX="313.0" layoutY="20.0" prefHeight="29.0" prefWidth="146.0" text="Diminta">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="approve" prefHeight="29.0" prefWidth="146.0" text="Disetuijui">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="action" layoutY="20.0" prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #2980B9;" text="ACTION" textFill="WHITE" />
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</HBox>
